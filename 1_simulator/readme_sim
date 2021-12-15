@@ -1,0 +1,14 @@
+This folder creates the simulator section by which the algorithm is tested. The simulator intializes multiple locations of different types (source, sensor, object) where source
+and sensor may overlap and objects are always at positive altitude above nearby sensors, and then computes the distances source-object for each source-object-combination, and 
+computes distances object-sensor for each sensor-object combination. For each sensor, it computes the sum of distances under all combinations and ejects those distances that are 
+above a certain treshold ( if SNR<1 or distance>PDT ). These lists are ordered in ascending order and are returned as ( (x_s,y_s,z_s), ((t_1,f_1), ..., (t_N,f_N)), T) 
+the location, the time delays measured and frequencies of these time delays, the time of sending of the message (in case of non-uniform clock for sources and sensors).
+
+The intialization:
+At least one source, at least four sensors within range of at least one common source, at least one object 
+within range of at least four sensors and one common source. Sources are assigned unique frequencies.
+
+The spectral simulation:
+
+The return of a dataset:
+The produced file is parsed to the algorithm folder. 
